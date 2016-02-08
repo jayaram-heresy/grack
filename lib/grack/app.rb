@@ -117,8 +117,10 @@ module Grack
     ##
     # @return [Boolean] +true+ if the request is authorized; otherwise, +false+.
     def authorized?
-      return allow_pull? if need_read?
-      return allow_push?
+      #return allow_pull? if need_read?
+      #return allow_push?
+      # modified to accept all requests without authorization. Lets move authorization to a middleware.
+      return true
     end
 
     ##
